@@ -1,0 +1,710 @@
+
+:root {
+  --fondo: #12101c;
+  --panel: #1b1829;
+  --hueso: #ebe6da;
+  --tenue: #a9a4b8;
+  --oro: #c9a45c;
+  --rojo: #b8324a;
+  --linea: #34304a;
+  --titulos: "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--hueso);
+  line-height: 1.7;
+}
+
+a[name] {
+  display: block;
+  scroll-margin-top: 6rem;
+}
+
+/* Portada */
+header {
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 10rem 1rem 2rem;
+  text-align: center;
+  background:
+    linear-gradient(to bottom, rgba(18, 16, 28, 0.55), var(--fondo)),
+    url("imagenes/fondo.jpg") center / cover no-repeat,
+    radial-gradient(circle at 50% 30%, #3a2a4a, var(--fondo) 70%);
+}
+
+header h1 {
+  font-family: var(--titulos);
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.lema {
+  max-width: 40ch;
+  color: var(--tenue);
+}
+
+.boton {
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--oro);
+  color: var(--oro);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  background: var(--oro);
+  color: var(--fondo);
+}
+
+.integrantes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  list-style: none;
+  color: var(--tenue);
+  font-size: 0.95rem;
+}
+
+.integrantes li {
+  padding: 0 1.2rem;
+}
+
+.integrantes li + li {
+  border-left: 1px solid var(--linea);
+}
+
+/* Navegación */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 2rem;
+  padding: 0.9rem 1rem;
+  background: rgba(18, 16, 28, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linea);
+}
+
+nav a {
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--hueso);
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--oro);
+  border-bottom-color: var(--oro);
+}
+
+/* Contenido principal */
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--linea);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-family: var(--titulos);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: normal;
+  letter-spacing: 0.03em;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  margin: 0.9rem auto 0;
+  background: var(--oro);
+}
+
+h2 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--oro);
+  transition: color 0.2s;
+}
+
+h2 a:hover,
+h2 a:focus-visible {
+  color: var(--oro);
+}
+
+h3 {
+  margin-top: 2.5rem;
+  color: var(--tenue);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+p {
+  max-width: 62ch;
+  margin-inline: auto;
+}
+
+/* Filas y Galerías */
+.fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.fila > * {
+  min-width: 0;
+}
+
+.fila .texto {
+  text-align: left;
+}
+
+.fila h2::after {
+  margin-left: 0;
+}
+
+.fila p {
+  margin-inline: 0;
+}
+
+.fila.invertida .galeria {
+  order: -1;
+}
+
+.galeria {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--oro) var(--panel);
+}
+
+.foto {
+  position: relative;
+  flex: 0 0 min(80%, 21rem);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  scroll-snap-align: start;
+  font-family: var(--titulos);
+  font-size: 2.5rem;
+  color: var(--tenue);
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.foto:hover {
+  border-color: var(--oro);
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.fila .galeria {
+  margin-top: 0;
+}
+
+.fila .foto {
+  flex-basis: 100%;
+}
+
+.foto a[name] {
+  position: absolute;
+  inset: 0;
+}
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 1px solid var(--oro);
+  border-radius: 50%;
+  background: rgba(18, 16, 28, 0.75);
+  color: var(--oro);
+  font-family: Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.flecha.izq {
+  left: 0.5rem;
+}
+
+.flecha.der {
+  right: 0.5rem;
+}
+
+.flecha:hover,
+.flecha:focus-visible {
+  background: var(--oro);
+  color: var(--fondo);
+}
+
+/* Tablas, listas y fuentes */
+.tabla {
+  max-width: 100%;
+  margin: 1.5rem auto 0;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: var(--panel);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+caption {
+  padding-bottom: 0.6rem;
+  color: var(--tenue);
+  font-size: 0.9rem;
+  caption-side: top;
+}
+
+th,
+td {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--linea);
+}
+
+thead th {
+  color: var(--oro);
+  font-family: var(--titulos);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
+
+tbody tr:hover {
+  background: rgba(201, 164, 92, 0.08);
+}
+
+ol {
+  max-width: 50rem;
+  margin: 1.5rem auto 0;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+ol li {
+  margin-bottom: 0.7rem;
+  padding-left: 0.4rem;
+}
+
+ol li::marker {
+  color: var(--oro);
+  font-weight: 600;
+}
+
+.fuentes {
+  font-size: 0.85rem;
+  color: var(--tenue);
+}
+
+.fuentes a {
+  color: var(--oro);
+}
+
+/* Pie de página y botón volver */
+footer {
+  padding: 4rem 1rem 6rem;
+  text-align: center;
+}
+
+blockquote {
+  max-width: 30ch;
+  margin: 0 auto;
+  color: var(--oro);
+  font-family: var(--titulos);
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.volver {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: var(--rojo);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.volver:hover,
+.volver:focus-visible {
+  background: var(--oro);
+  color: var(--fondo);
+}
+
+/* TEMA PEAK*/
+body.tema-peak {
+  --oro: #a855f7;
+  --titulos: "Darumadrop One", cursive;
+}
+
+body.tema-peak header h1 {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  letter-spacing: 0.03em;
+}
+
+body.tema-peak h2 {
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+}
+
+body.tema-peak nav a,
+body.tema-peak .boton,
+body.tema-peak thead th,
+body.tema-peak blockquote {
+  font-family: "Darumadrop One", cursive;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+}
+
+/* 2. TEMA CELESTE */
+.relato p {
+  text-align: left;
+}
+
+.relato p + p {
+  margin-top: 1.1rem;
+}
+
+.escena {
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+}
+
+.escena .marco {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  color: var(--tenue);
+  font-family: var(--titulos);
+  font-size: 1.1rem;
+}
+
+.escena img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.escena figcaption {
+  margin-top: 0.6rem;
+  color: var(--tenue);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.cierre blockquote {
+  color: var(--aliento);
+  font-size: 1.8rem;
+  letter-spacing: 0.12em;
+}
+
+body.tema-celeste {
+  --oro: #ef4444;
+  --aliento: #f87171;
+  --titulos: "Renogare", "Montserrat", sans-serif;
+  font-family: "Renogare", "Montserrat", sans-serif;
+}
+
+body.tema-celeste header h1,
+body.tema-celeste h2,
+body.tema-celeste nav a,
+body.tema-celeste .boton {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* TEMA VVVVVV */
+body.tema-vvvvvv {
+  --oro: #38e8ff;
+  --titulos: "Press Start 2P", monospace;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.78rem;
+  line-height: 2;
+}
+
+body.tema-vvvvvv header h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+  letter-spacing: 0.08em;
+}
+
+body.tema-vvvvvv h2 {
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  line-height: 1.6;
+}
+
+body.tema-vvvvvv nav a,
+body.tema-vvvvvv .boton,
+body.tema-vvvvvv thead th,
+body.tema-vvvvvv table,
+body.tema-vvvvvv blockquote {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+/* TEMA MINECRAFT */
+body.tema-minecraft {
+  --fondo: #101810;
+  --panel: #1b281b;
+  --hueso: #edf1e6;
+  --tenue: #b7c2ae;
+  --oro: #70b840;
+  --verde-oscuro: #355e2c;
+  --rojo: #b8324a;
+  --linea: #354633;
+  --titulos: "Palatino Linotype", Palatino, Georgia, serif;
+  background: radial-gradient(circle at top, #1d2b1b 0, var(--fondo) 42rem);
+}
+
+body.tema-minecraft #inicio,
+body.tema-minecraft section {
+  scroll-margin-top: 6rem;
+}
+
+body.tema-minecraft header {
+  justify-content: center;
+  padding: 7rem 1rem 3rem;
+  background:
+    linear-gradient(to bottom, rgba(16, 24, 16, 0.35), var(--fondo)),
+    url("imagenes/fondo.jpg") center / cover no-repeat,
+    radial-gradient(circle at 50% 30%, #426634, var(--fondo) 70%);
+}
+
+body.tema-minecraft header h1 {
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  letter-spacing: 0.06em;
+  color: var(--hueso);
+  text-shadow: 0 3px 14px #000;
+}
+
+body.tema-minecraft .lema {
+  color: var(--hueso);
+  font-size: 1.1rem;
+  text-shadow: 0 2px 8px #000;
+}
+
+body.tema-minecraft .boton {
+  padding: 0.55rem 1.5rem;
+  color: var(--hueso);
+  background: rgba(16, 24, 16, 0.65);
+}
+
+body.tema-minecraft .boton:hover,
+body.tema-minecraft .boton:focus-visible {
+  background: var(--oro);
+  color: #101810;
+}
+
+body.tema-minecraft nav {
+  gap: 0.4rem 1.5rem;
+  padding: 0.85rem 1rem;
+  background: rgba(16, 24, 16, 0.94);
+}
+
+body.tema-minecraft main {
+  max-width: 70rem;
+  padding: 0 1.25rem;
+}
+
+body.tema-minecraft h2::after {
+  height: 3px;
+}
+
+body.tema-minecraft p {
+  max-width: none;
+  margin-bottom: 1rem;
+}
+
+body.tema-minecraft .con-imagen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+body.tema-minecraft .con-imagen .contenido {
+  min-width: 0;
+  text-align: left;
+}
+
+body.tema-minecraft .con-imagen img {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  border: 2px solid var(--verde-oscuro);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.35);
+}
+
+body.tema-minecraft .imagen-derecha img {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+body.tema-minecraft .imagen-derecha .contenido {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.tema-minecraft .imagen-izquierda img {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.tema-minecraft .imagen-izquierda .contenido {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+body.tema-minecraft ul,
+body.tema-minecraft .lista-numerada {
+  width: fit-content;
+  max-width: 100%;
+  margin: 1rem auto 1.5rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+body.tema-minecraft ul li,
+body.tema-minecraft .lista-numerada li {
+  padding: 0.2rem 0;
+}
+
+body.tema-minecraft ul li::marker,
+body.tema-minecraft .lista-numerada li::marker {
+  color: var(--oro);
+  font-weight: bold;
+}
+
+body.tema-minecraft .tabla {
+  border: 1px solid var(--linea);
+  border-radius: 0.5rem;
+}
+
+body.tema-minecraft table {
+  max-width: none;
+  font-size: 1rem;
+}
+
+body.tema-minecraft th,
+body.tema-minecraft td {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-bottom: 1px solid var(--linea);
+  text-align: center;
+}
+
+body.tema-minecraft thead th {
+  color: var(--hueso);
+  background: var(--verde-oscuro);
+}
+
+body.tema-minecraft tbody tr:nth-child(even) {
+  background: rgba(112, 184, 64, 0.08);
+}
+
+body.tema-minecraft tbody tr:hover {
+  background: rgba(112, 184, 64, 0.16);
+}
+
+body.tema-minecraft a[href] {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border: 2px solid #a5d66b;
+  background: #4c7f32;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 3px 0 #263d20;
+  transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+body.tema-minecraft a[href]:hover,
+body.tema-minecraft a[href]:focus-visible {
+  background: #70b840;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #263d20;
+}
+
+body.tema-minecraft footer {
+  padding: 2rem 1rem 1rem;
+}
+
+body.tema-minecraft blockquote {
+  max-width: none;
+  font-size: 1.4rem;
+}
+
+body.tema-minecraft a.volver {
+  position: static;
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 2rem;
+  border-radius: 0;
+  text-align: center;
+}

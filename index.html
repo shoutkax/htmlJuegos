@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto html</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <a name="inicio"></a>
+
+  <header>
+    <h1>De la caida a la cima </h1>
+    <p class="lema">Cuatro mundos sobre aprender a soltar,
+	construir nuestro propio camino y nunca rendirse.</p>
+    <br><br><br><br><br><br><br><br>
+    <ul class="integrantes">
+      <li>Juan Ávila</li>
+      <li>Nicolás Cáceres</li>
+      <li>Alejandro Beltrán</li>
+      <li>Tomás Alba</li>
+    </ul>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#peak">Peak</a>
+    <a href="#celeste">Celeste</a>
+    <a href="#minecraft">Minecraft</a>
+    <a href="#juego4">VVVVVV</a>
+    <a href="#sobrenosotros">Sobre Nosotros</a>
+  </nav>
+
+  <main>
+
+    <section>
+      <a name="home"></a>
+      <h2>Introducción</h2>
+      <p>Los videojuegos son mucho más que una forma de pasar el rato:
+	  son experiencias capaces de acompañarnos,
+	  desafiarnos y hacernos ver los problemas desde otro ángulo.
+	  A través de cuatro títulos muy diferentes entre sí, analizamos cómo el trabajo en equipo,
+	  la aceptación del fracaso y la libertad de construir nuestro propio camino dejan huellas que trascienden el juego.</p>
+
+      <h3>Galería de imágenes</h3>
+
+      <div class="galeria">
+        <!-- Para poner tu imagen, cambia el número por: <img src="imagenes/foto1.jpg" alt="Descripción"> -->
+        <div class="foto"><img src="imagenes/peak1.jpg" ></div>
+        <div class="foto"><img src="imagenes/celestebanner.jpg"></div>
+        <div class="foto"><img src="imagenes/minecraftbanner.jpg"></div>
+        <div class="foto"><img src="imagenes/vvvvvvbanner.jpg"></div>
+      </div>
+    </section>
+
+    <!--
+      Cada juego: un texto y una mini galería lado a lado (.fila).
+      La clase "invertida" pone la galería a la izquierda.
+      Cada foto tiene su marcador (name) y dos flechas con href que apuntan
+      al marcador de la foto anterior y de la siguiente.
+    -->
+
+    <section>
+      <a name="peak"></a>
+      <div class="fila">
+        <div class="texto">
+          <h2><a href="peak.html">Peak</a></h2>
+          <p>Hay montañas que no se suben solos. 
+            Peak nos recuerda que el camino pesa menos 
+            cuando alguien nos tiende la mano</p>
+        </div>
+        <div class="galeria">
+          <div class="foto"><img src="imagenes/peak2.jpeg" ><a name="peak-1"></a>
+            <a class="flecha izq" href="#peak-3" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#peak-2" aria-label="Imagen siguiente">›</a>
+          </div>
+          <div class="foto"><img src="imagenes/peak3.jpg" ><a name="peak-2"></a>
+            <a class="flecha izq" href="#peak-1" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#peak-3" aria-label="Imagen siguiente">›</a>
+          </div>
+          <div class="foto"><img src="imagenes/peak4.jpeg" ><a name="peak-3"></a>
+            <a class="flecha izq" href="#peak-2" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#peak-1" aria-label="Imagen siguiente">›</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <a name="celeste"></a>
+      <div class="fila invertida">
+        <div class="texto">
+          <h2><a href="celeste.html">Celeste</a></h2>
+          <p>A veces la montaña más difícil de subir es uno mismo.
+            Celeste nos invita a escucharnos con paciencia, a perdonar cada caída y a recordar que descansar 
+            también es parte del camino.</p>
+        </div>
+        <div class="galeria">
+          <div class="foto"><a name="celeste-1"></a><img src="imagenes/celesteindex1.png">
+            <a class="flecha izq" href="#celeste-3" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#celeste-2" aria-label="Imagen siguiente">›</a>
+          </div>
+          <div class="foto"><a name="celeste-2"></a><img src="imagenes/celesteindex2.jpg">
+            <a class="flecha izq" href="#celeste-1" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#celeste-3" aria-label="Imagen siguiente">›</a>
+          </div>
+          <div class="foto"><a name="celeste-3"></a><img src="imagenes/celesteindex3.png">
+            <a class="flecha izq" href="#celeste-2" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#celeste-1" aria-label="Imagen siguiente">›</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <a name="minecraft"></a>
+      <div class="fila">
+        <div class="texto">
+          <h2><a href="Minecraft.html">Minecraft</a></h2>
+          <p>Minecraft es, en esencia, un espejo de la libertad y de la fragilidad humana.
+		  Con solo unos cuantos bloques digitales, el juego nos pone frente a una verdad sencilla:
+		  empiezas sin nada, pero puedes construirlo todo,
+		  sabiendo que en cualquier momento puedes perderlo en un segundo</p>
+        </div>
+        <div class="galeria">
+          <div class="foto"><a name="minecraft-1"></a><img src="imagenes/minecraft1.png">
+            <a class="flecha izq" href="#minecraft-3" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#minecraft-2" aria-label="Imagen siguiente">›</a>
+          </div>
+          <div class="foto"><a name="minecraft-2"></a><img src="imagenes/minecraft2.jpeg">
+            <a class="flecha izq" href="#minecraft-1" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#minecraft-3" aria-label="Imagen siguiente">›</a>
+          </div>
+          <div class="foto"><a name="minecraft-3"></a><img src="imagenes/minecraft3.jpeg">
+            <a class="flecha izq" href="#minecraft-2" aria-label="Imagen anterior">‹</a>
+            <a class="flecha der" href="#minecraft-1" aria-label="Imagen siguiente">›</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+  <a name="juego4"></a>
+  <div class="fila invertida">
+    <div class="texto">
+      <h2><a href="vvvvvv.html">VVVVVV</a></h2>
+      <p>Un juego minimalista donde no puedes saltar,
+	  solo invertir la gravedad.
+	  Una metáfora sobre asumir nuestras decisiones,
+	  aceptar el fracaso y cambiar de perspectiva para rescatar a quienes nos importan.</p>
+    </div>
+    <div class="galeria">
+      <div class="foto"><a name="juego4-1"></a><img src="imagenes/vvvvvv1.png">
+        <a class="flecha izq" href="#juego4-3" aria-label="Imagen anterior">‹</a>
+        <a class="flecha der" href="#juego4-2" aria-label="Imagen siguiente">›</a>
+      </div>
+      <div class="foto"><a name="juego4-2"></a><img src="imagenes/vvvvvv2.png">
+        <a class="flecha izq" href="#juego4-1" aria-label="Imagen anterior">‹</a>
+        <a class="flecha der" href="#juego4-3" aria-label="Imagen siguiente">›</a>
+      </div>
+      <div class="foto"><a name="juego4-3"></a><img src="imagenes/vvvvvv3.png">
+        <a class="flecha izq" href="#juego4-2" aria-label="Imagen anterior">‹</a>
+        <a class="flecha der" href="#juego4-1" aria-label="Imagen siguiente">›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section>
+      <a name="conclusion"></a>
+      <h2>Conclusión</h2>
+      <p>Los videojuegos son mucho más que un simple entretenimiento;
+	  son el refugio moderno contra la soledad y un espacio para descansar.
+	  Lejos de ser una perdida de tiempo,
+	  este representa un escape temporal diseñada para rescatarnos de una realidad que a menudo nos satura o nos aísla.</p>
+    </section>
+
+    <section>
+      <a name="sobrenosotros"></a>
+      <h2>Sobre Nosotros</h2>
+      <p>Ingenieros en proceso</p>
+
+      <ul class="integrantes">
+        <li><a class="boton" href="https://github.com/shoutkax" target="_blank">Juan Ávila</a></li>
+        <li><a class="boton" href="peak.html" target="_blank">Nicolás Cáceres</a></li>
+        <li><a class="boton" href="Minecraft.html" target="_blank">Alejandro Beltrán</a></li>
+        <li><a class="boton" href="vvvvvv.html" target="_blank">Tomás Alba</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+  <blockquote>Cada partida es una nueva oportunidad para volver a intentarlo</blockquote>
+</footer>
+
+  <a class="volver" href="#inicio">Volver</a>
+
+</body>
+</html>
